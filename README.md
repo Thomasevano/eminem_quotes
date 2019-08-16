@@ -31,7 +31,7 @@ $ npm run build
 
 ```
 $ npm start
-#execute the app in local in environment and live view
+#execute the app in local environment and see the live preview
 ```
 ## Authors
 
