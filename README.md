@@ -1,18 +1,18 @@
 # Eminem Quotes
 
-A little web app to generate a random Eminem quote between a certain amount in a custom api/quotes.json
+A little web app to generate a random Eminem quote between a certain amount in a custom api (quotes.json)
 
-##Getting started
+## Getting started
 
 Download and install Node if you haven't already
 
-###Clone the Repo
+### Clone the Repo
 
 ```
 $git clone https://github.com/Thomasevano/eminem_quotes.github.io.git
 ```
 
-##Install
+## Install
 
 Go to your project directory
 
@@ -21,7 +21,7 @@ $ npm install
 #don't forget sudo on mac
 ```
 
-##Run
+## Run
 
 ```
 $ npm run build
@@ -31,7 +31,7 @@ $ npm run build
 
 ```
 $ npm start
-# execute the app in local in environment and live view
+#execute the app in local in environment and live view
 ```
 ## Authors
 
