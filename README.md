@@ -1,19 +1,42 @@
 # Eminem Quotes
 
-A little web app to generate an Eminem quote
+A little web app to generate a random Eminem quote between a certain amount in a custom api/quotes.json
 
-Setup:
+##Getting started
 
-Clone the Repo
+Download and install Node if you haven't already
 
+###Clone the Repo
+
+```
 $git clone https://github.com/Thomasevano/eminem_quotes.github.io.git
+```
 
-Go to your directory
+##Install
 
-Install NPM
+Go to your project directory
 
+```
 $ npm install
 #don't forget sudo on mac
+```
 
-Run
+##Run
+
+```
+$ npm run build
+#build the build/app.bundle.js
+```
+
+
+```
 $ npm start
+# execute the app in local in environment and live view
+```
+## Authors
+
+* **Thomas Evano**
+
+## License
+
+This project is licensed under the MIT License
