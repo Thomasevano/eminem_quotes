@@ -7,7 +7,7 @@ getQuoteButton.addEventListener('click', getRandomQuote)
 
 async function getRandomQuote() {
   try {
-    const quotes = await getQuotes('data/quotes.json')
+    const quotes = await getQuotes('./data/quotes.json')
     let randomQuoteId = getRandomId(0, quotes.length)
     showRandomQuotes(quotes[`${randomQuoteId}`])
   }
