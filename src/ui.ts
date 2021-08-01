@@ -8,9 +8,8 @@ interface Quote{
   body: string,
   author: string,
 }
-let quote: Array<Quote>
 
-function showRandomQuotes(quote: object) {
+function showRandomQuotes(quote: Quote) {
   eminemQuote.innerHTML = `
     <div class="card card-body mb-3">
       <div class="row">
