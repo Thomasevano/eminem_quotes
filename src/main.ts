@@ -8,5 +8,4 @@ getQuoteButton.addEventListener('click', getQuote)
 async function getQuote() {
   const quote = await getRandomQuote()
   showRandomQuote(quote!)
-  console.log(quote)
 }
