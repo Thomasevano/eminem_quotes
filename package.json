@@ -16,5 +16,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^1.21.0",
     "daisyui": "^1.14.0"
+  },
+  "engines": {
+    "node": "18"
   }
 }
