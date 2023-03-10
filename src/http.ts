@@ -4,9 +4,8 @@ const supabase = createClient(`${import.meta.env.VITE_SUPABASE_URL}`, `${import.
 
 async function getRandomQuote() {
   try {
-    const { data } = await supabase
-      .rpc('get_random_quote')
-    return data![0]
+    const { data } = await supabase.rpc('get_random_quote')
+    return data
   }
   catch(error) {
     console.error(error)
