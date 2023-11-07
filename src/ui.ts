@@ -9,8 +9,8 @@ function showRandomQuote(quote: Quote) {
         <img style="margin: auto" src="${quote.cover_url}" alt="album cover">
       </figure>
       <div class="card-body items-center text-center mt-4">
-        <span class="badge badge-primary">Morceau: ${quote.title}</span>
-        <span class="badge badge-primary">Album: ${quote.name}</span>
+        <span class="badge">Morceau: ${quote.title}</span>
+        <span class="badge">Album: ${quote.name}</span>
         <blockquote>
           <p>${quote.quote}.</p>
         </blockquote>
