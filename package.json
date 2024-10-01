@@ -14,8 +14,8 @@
     "vite": "^5.2.11"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.43.4",
-    "daisyui": "^4.11.1"
+    "daisyui": "^4.11.1",
+    "pocketbase": "^0.21.5"
   },
   "engines": {
     "node": "20"

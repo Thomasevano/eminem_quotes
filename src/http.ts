@@ -1,13 +1,16 @@
-import { createClient } from '@supabase/supabase-js'
+import PocketBase from 'pocketbase';
 
-const supabase = createClient(`${import.meta.env.VITE_SUPABASE_URL}`, `${import.meta.env.VITE_SUPABASE_KEY}`)
+const pb = new PocketBase(import.meta.env.VITE_POCKETBASE_URL);
 
 async function getRandomQuote() {
   try {
-    const { data } = await supabase.rpc('get_random_quote')
-    return data
+    const data = await pb.collection('get_random_quote').getList(1, 1, {
+      sort: '@random',
+    });
+    console.log(data.items[0]);
+    return data.items[0]
   }
-  catch(error) {
+  catch (error) {
     console.error(error)
     return error
   };
