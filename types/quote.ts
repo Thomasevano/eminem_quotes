@@ -1,7 +1,7 @@
 export interface Quote {
-  cover_url: string;
-  title: string;
-  name: string;
+  album_cover_url: string;
+  song_title: string;
+  album_name: string;
   quote: string;
-  listen_url: string;
+  song_listen_url: string;
 }
