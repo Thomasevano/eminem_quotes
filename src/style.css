@@ -38,8 +38,9 @@
   .passage-long { --lyric-size: var(--lyric-size-long); line-height: 1.5; letter-spacing: 0; max-width: 55ch; }
   .passage p { @apply whitespace-pre-line; text-wrap: pretty; }
   .passage-state { @apply flex min-h-72 items-center text-2xl text-quiet; max-width: 30ch; }
+  .passage-error { @apply mt-4 text-sm text-quiet; }
   .actions { @apply mt-10 flex flex-wrap items-center gap-x-8 gap-y-3; }
-  .next { @apply inline-flex min-h-12 items-center justify-between border border-ink bg-ink pl-5 font-reading text-base font-medium text-paper; gap: clamp(.5rem, 2vw, 2rem); transition: background-color 150ms ease-out, color 150ms ease-out; }
+  .next { @apply inline-flex min-h-12 items-center justify-between border border-ink bg-ink pl-5 font-reading text-base font-medium text-paper; width: 15rem; max-width: 100%; gap: clamp(.5rem, 2vw, 2rem); transition: background-color 150ms ease-out, color 150ms ease-out; }
   .next > :first-child { min-width: 0; overflow-wrap: anywhere; }
   .next-arrow { @apply flex min-h-12 w-12 shrink-0 items-center justify-center border-l border-ink bg-accent text-xl text-ink; max-width: 48px; }
   .next:active { transform: scale(.96); }
