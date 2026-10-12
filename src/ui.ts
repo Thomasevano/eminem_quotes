@@ -7,10 +7,12 @@ const song = document.getElementById('songTitle')!
 const album = document.getElementById('albumName')!
 const cover = document.getElementById('cover')!
 const image = document.getElementById('albumCover') as HTMLImageElement
+const caption = document.getElementById('coverCaption')!
 const listen = document.getElementById('listenSong') as HTMLAnchorElement
 
 image.addEventListener('error', () => {
   image.hidden = true
+  caption.hidden = false
 })
 
 function safeHttpUrl(url: string): string | null {
@@ -33,6 +35,7 @@ function showRandomQuote(quote: Quote) {
   const artwork = safeHttpUrl(quote.album_cover_url)
   cover.hidden = false
   image.hidden = !artwork
+  caption.hidden = !!artwork
   image.alt = quote.album_name + ' album cover'
   if (artwork) {
     image.src = artwork

@@ -32,6 +32,7 @@
   .eyebrow { @apply font-source text-xs font-normal uppercase text-quiet; letter-spacing: .06em; line-height: 1.6; }
   .cover { @apply m-0 aspect-square overflow-hidden bg-rule; }
   .cover img { @apply block h-full w-full object-cover; }
+  .cover-unavailable { @apply flex h-full items-center justify-center p-4 text-center font-source text-xs text-ink; }
   .source-title { @apply font-reading text-xl font-semibold; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
   .source-album { @apply mt-2 text-sm text-quiet; line-height: 1.5; overflow-wrap: anywhere; }
   .passage { @apply m-0 min-w-0 font-reading font-normal; --lyric-size: clamp(2rem, 3.4vw, 3rem); --lyric-size-long: 1.875rem; font-size: var(--lyric-size); line-height: 1.3; letter-spacing: -.018em; max-width: 36ch; overflow-wrap: break-word; }
