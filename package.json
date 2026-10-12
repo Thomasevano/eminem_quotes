@@ -14,7 +14,6 @@
     "vite": "^5.4.8"
   },
   "dependencies": {
-    "daisyui": "^4.12.10",
     "pocketbase": "^0.21.5"
   }
 }
