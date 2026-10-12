@@ -2,23 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22>
       <text y=%22.9em%22 font-size=%2290%22>
         🖕🏻
       </text>
     </svg>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <title>Eminem Quotes</title>
   </head>
   <body>
-    <div id="app" class="hero min-h-screen bg-base-200">
-      <div class="text-center hero-content">
-        <div class="max-w-md">
-          <h1 class="mb-5 text-5xl font-bold">Eminem quote</h1>
-          <div id="quote"></div>
-          <button class="btn btn-primary mt-4" id="randomButton">Random quote</button>
-        </div>
-      </div>
+    <div id="app" class="sheet">
+      <header class="masthead">
+        <h1 class="wordmark">Eminem Quotes</h1>
+      </header>
+      <main class="sleeve-layout" aria-busy="true">
+        <aside class="sleeve-source" aria-label="Song source">
+          <figure id="cover" class="cover" hidden>
+            <img id="albumCover" alt="" hidden />
+          </figure>
+          <div id="sourceCopy" class="source-copy" hidden>
+            <h2 id="songTitle" class="source-title"></h2>
+            <p id="albumName" class="source-album"></p>
+          </div>
+        </aside>
+        <section class="sleeve-reading" aria-label="Lyric passage">
+          <div class="reading-heading"><span class="reading-mark" aria-hidden="true">“</span></div>
+          <blockquote id="quote" class="passage" hidden><p id="quoteText"></p></blockquote>
+          <p id="quoteStatus" class="passage-state" role="status" aria-live="polite">Loading a lyric…</p>
+          <div class="actions">
+            <button class="next" id="randomButton" type="button" disabled><span id="randomButtonLabel">Finding a quote…</span><span class="next-arrow" aria-hidden="true">→</span></button>
+            <a id="listenSong" class="listen" target="_blank" rel="noopener noreferrer" hidden>Listen to the song <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </main>
+      <footer class="sheet-footer"><p class="eyebrow">Lyrics belong to their respective rights holders.</p></footer>
+      <noscript>Eminem Quotes needs JavaScript to load quotes.</noscript>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

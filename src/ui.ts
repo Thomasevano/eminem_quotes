@@ -1,6 +1,17 @@
-import { Quote } from '../types/quote';
+import { Quote } from '../types/quote'
 
-const eminemQuote = document.getElementById('quote')!
+const blockquote = document.getElementById('quote')!
+const passage = document.getElementById('quoteText')!
+const source = document.getElementById('sourceCopy')!
+const song = document.getElementById('songTitle')!
+const album = document.getElementById('albumName')!
+const cover = document.getElementById('cover')!
+const image = document.getElementById('albumCover') as HTMLImageElement
+const listen = document.getElementById('listenSong') as HTMLAnchorElement
+
+image.addEventListener('error', () => {
+  image.hidden = true
+})
 
 function safeHttpUrl(url: string): string | null {
   try {
@@ -12,57 +23,31 @@ function safeHttpUrl(url: string): string | null {
 }
 
 function showRandomQuote(quote: Quote) {
-  eminemQuote.replaceChildren()
+  passage.textContent = quote.quote
+  blockquote.classList.toggle('passage-long', quote.quote.length > 350)
+  blockquote.hidden = false
+  song.textContent = quote.song_title
+  album.textContent = quote.album_name
+  source.hidden = false
 
-  const card = document.createElement('div')
-  card.className = 'card w-96 shadow-xl'
-
-  const cover = safeHttpUrl(quote.album_cover_url)
-  if (cover) {
-    const figure = document.createElement('figure')
-    figure.className = 'px-10 pt-10'
-    const img = document.createElement('img')
-    img.src = cover
-    img.alt = 'album cover'
-    img.style.margin = 'auto'
-    figure.append(img)
-    card.append(figure)
+  const artwork = safeHttpUrl(quote.album_cover_url)
+  cover.hidden = false
+  image.hidden = !artwork
+  image.alt = quote.album_name + ' album cover'
+  if (artwork) {
+    image.src = artwork
+  } else {
+    image.removeAttribute('src')
   }
 
-  const body = document.createElement('div')
-  body.className = 'card-body items-center text-center mt-4'
-
-  const song = document.createElement('span')
-  song.className = 'badge'
-  song.textContent = `Morceau: ${quote.song_title}`
-
-  const album = document.createElement('span')
-  album.className = 'badge'
-  album.textContent = `Album: ${quote.album_name}`
-
-  const blockquote = document.createElement('blockquote')
-  const paragraph = document.createElement('p')
-  paragraph.textContent = `${quote.quote}.`
-  blockquote.append(paragraph)
-
-  body.append(song, album, blockquote)
-
-  const listen = safeHttpUrl(quote.song_listen_url)
-  if (listen) {
-    const actions = document.createElement('div')
-    actions.className = 'card-actions mt-4'
-    const link = document.createElement('a')
-    link.href = listen
-    link.className = 'btn btn-secondary'
-    link.target = '_blank'
-    link.rel = 'noopener noreferrer'
-    link.textContent = 'Listen song'
-    actions.append(link)
-    body.append(actions)
+  const songUrl = safeHttpUrl(quote.song_listen_url)
+  listen.hidden = !songUrl
+  if (songUrl) {
+    listen.href = songUrl
+    listen.setAttribute('aria-label', 'Listen to ' + quote.song_title + ' (opens in a new tab)')
+  } else {
+    listen.removeAttribute('href')
   }
-
-  card.append(body)
-  eminemQuote.append(card)
 }
 
 export default showRandomQuote
